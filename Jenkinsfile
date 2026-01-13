@@ -11,11 +11,11 @@ pipeline {
 
         stage('Run Login Perf Test') {
             steps {
-                sh '''
+                bat '''
                 cd jmeter
-                jmeter -n \
-                  -t PracticeTestAutomation_Login_Test.jmx \
-                  -l results.jtl \
+                jmeter -n ^
+                  -t PracticeTestAutomation_Login_Test.jmx ^
+                  -l results.jtl ^
                   -e -o report
                 '''
             }
