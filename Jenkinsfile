@@ -3,11 +3,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/aryeshworks/DemoPerfTests.git'
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         git branch: 'main', url: 'https://github.com/aryeshworks/DemoPerfTests.git'
+        //     }
+        // }
 
         stage('Run Login Perf Test') {
             steps {
