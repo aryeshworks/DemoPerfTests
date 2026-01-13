@@ -13,6 +13,10 @@ pipeline {
             steps {
                 bat '''
                 cd jmeter
+
+                if exist report rmdir /s /q report
+                if exist results.jtl del /f /q results.jtl
+
                 jmeter -n ^
                   -t PracticeTestAutomation_Login_Test.jmx ^
                   -l results.jtl ^
