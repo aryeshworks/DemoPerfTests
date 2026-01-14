@@ -16,25 +16,11 @@ Frequency: 80%
 - System authenticates user
 - System returns authentication token
 
-## UC-02: Failed User Login
-
-Actor: Anonymous / User  
-Frequency: 20%
-
-### Preconditions
-- User submits login request
-- Credentials are invalid or user does not exist
-
-### Main Flow
-- User submits invalid credentials
-- System rejects authentication
-- System returns error response (401 / 403)
-
 **Mapped JMeter Test:** `PracticeTestAutomation_Login_Test.jmx`
 
 ---
 
-## UC-03: Manage Interviews
+## UC-02: Manage Interviews
 
 **Actor:** Recruiter / Admin  
 **Frequency:** 40%  
