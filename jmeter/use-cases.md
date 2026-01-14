@@ -1,9 +1,55 @@
-## UC-01: User Login
-Actor: Registered User
-Frequency: 100%
-Mapped JMeter Test: PracticeTestAutomation_Login_Test.jmx
+# Use Case Model List (UCML)
 
-## UC-02: Manage Interviews
-Actor: Recruiter/Admin
-Frequency: 40%
-Mapped JMeter Test: PracticeTestAutomation_InterviewOps_Test.jmx
+---
+
+## UC-01: Successful User Login
+
+Actor: Registered User  
+Frequency: 80%
+
+### Preconditions
+- User account exists
+- User provides valid email and password
+
+### Main Flow
+- User submits valid credentials
+- System authenticates user
+- System returns authentication token
+
+## UC-02: Failed User Login
+
+Actor: Anonymous / User  
+Frequency: 20%
+
+### Preconditions
+- User submits login request
+- Credentials are invalid or user does not exist
+
+### Main Flow
+- User submits invalid credentials
+- System rejects authentication
+- System returns error response (401 / 403)
+
+**Mapped JMeter Test:** `PracticeTestAutomation_Login_Test.jmx`
+
+---
+
+## UC-03: Manage Interviews
+
+**Actor:** Recruiter / Admin  
+**Frequency:** 40%  
+
+### Preconditions
+- User is authenticated (valid JWT token available)
+- User has sufficient privileges to manage interviews
+
+### Description / Main Flow
+- User views published and unpublished interviews
+- User creates a new interview
+- User updates interview information
+- User retrieves interview details by ID
+- User deletes the interview
+
+**Mapped JMeter Test:** `PracticeTestAutomation_InterviewOps_Test.jmx`
+
+---
